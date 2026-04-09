@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akshay U. Veettil - Demand Analyst | Data Science & AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f0e8;--bg2:#ede6d6;--bg3:#e8dfd0;--card:#faf7f1;--border:#d9cfc0;--border2:#c9bfaf;--text:#2a2018;--text2:#6b5c48;--text3:#9c8a78;--accent:#5c4a38;--accent2:#8c6e56;--al:#ede0d0;--nav-h:64px;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.6;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);background:rgba(245,240,232,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 48px;transition:box-shadow 0.3s;}
+nav.scrolled{box-shadow:0 2px 20px rgba(90,70,50,0.08);}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--text);cursor:pointer;}
+.nav-links{display:flex;gap:2px;}
+.nav-links a{font-size:13px;color:var(--text2);text-decoration:none;padding:6px 13px;border-radius:6px;transition:all 0.2s;cursor:pointer;}
+.nav-links a:hover,.nav-links a.active{background:var(--al);color:var(--accent);}
+.nav-cv{font-size:12px;font-weight:500;background:var(--accent);color:#fff;border:none;padding:8px 20px;border-radius:20px;cursor:pointer;text-decoration:none;}
+.page{min-height:100vh;padding-top:var(--nav-h);display:none;}
+.page.active{display:block;}
+.pi{max-width:1100px;margin:0 auto;padding:64px 48px;}
+.ey{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-bottom:8px;}
+.st{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:500;color:var(--text);line-height:1.1;margin-bottom:16px;}
+.dv{width:48px;height:2px;background:var(--accent2);margin-bottom:40px;}
+.fi{opacity:0;transform:translateY(14px);transition:opacity 0.55s ease,transform 0.55s ease;}
+.fi.v{opacity:1;transform:none;}
+#home .pi{min-height:calc(100vh - var(--nav-h));display:grid;grid-template-columns:1fr 300px;gap:60px;align-items:center;padding-top:80px;}
+.h-ey{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--text3);margin-bottom:16px;}
+.h-name{font-family:'Cormorant Garamond',serif;font-size:58px;font-weight:600;line-height:1.02;color:var(--text);margin-bottom:22px;}
+.aw{display:flex;align-items:center;gap:12px;margin-bottom:24px;min-height:38px;}
+.ab{width:3px;height:28px;background:var(--accent2);border-radius:2px;animation:blink 1.2s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.25}}
+.at{font-size:18px;color:var(--accent2);transition:opacity 0.35s ease;}
+.h-bio{font-size:15px;color:var(--text2);line-height:1.75;max-width:480px;margin-bottom:32px;}
+.hbtns{display:flex;gap:12px;margin-bottom:48px;}
+.bp{font-size:13px;font-weight:500;background:var(--accent);color:#fff;border:none;padding:12px 28px;border-radius:8px;cursor:pointer;}
+.bs{font-size:13px;background:transparent;color:var(--accent);border:1.5px solid var(--border2);padding:12px 28px;border-radius:8px;cursor:pointer;}
+.bs:hover,.bp:hover{opacity:0.85;}
+.hst{display:flex;gap:36px;padding-top:32px;border-top:1px solid var(--border);}
+.sn{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;color:var(--text);line-height:1;}
+.sl{font-size:11px;color:var(--text3);margin-top:4px;}
+.hph{width:260px;height:300px;background:var(--bg3);border-radius:16px;border:1px solid var(--border);overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;}
+.hph img{width:100%;height:100%;object-fit:cover;}
+.phi{width:80px;height:80px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:#fff;}
+.phn{font-size:11px;color:var(--text3);}
+.aq{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--text2);line-height:1.6;border-left:3px solid var(--accent2);padding-left:20px;margin-bottom:28px;}
+.ab2{font-size:14.5px;color:var(--text2);line-height:1.85;margin-bottom:28px;max-width:780px;}
+.atags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;}
+.atag{font-size:12px;padding:5px 14px;border-radius:20px;background:var(--al);color:var(--accent);border:1px solid var(--border);}
+.afc{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.fb{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 18px;}
+.fl{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;}
+.fv{font-size:13px;font-weight:500;color:var(--text);}
+.ei{display:grid;grid-template-columns:150px 1fr;gap:24px;padding-bottom:40px;}
+.el{text-align:right;padding-top:4px;}
+.ed{font-size:11.5px;color:var(--text3);line-height:1.5;}
+.eloc{font-size:11px;color:var(--text3);margin-top:2px;}
+.eb{display:inline-block;margin-top:8px;font-size:10px;padding:2px 8px;border-radius:4px;background:var(--al);color:var(--accent);border:1px solid var(--border);}
+.er{border-left:2px solid var(--border);padding-left:28px;position:relative;}
+.edot{width:10px;height:10px;border-radius:50%;background:var(--accent2);border:2px solid var(--bg);position:absolute;left:-6px;top:5px;}
+.ec{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--text);margin-bottom:2px;}
+.ero{font-size:13px;color:var(--accent2);margin-bottom:12px;font-weight:500;}
+.edesc{font-size:13.5px;color:var(--text2);line-height:1.8;}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.skc{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 22px;}
+.ski{width:36px;height:36px;border-radius:8px;background:var(--al);display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.ski svg{width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:1.8;}
+.skcat{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:var(--text3);margin-bottom:12px;}
+.skps{display:flex;flex-wrap:wrap;gap:6px;}
+.skp{font-size:11.5px;padding:4px 10px;border-radius:5px;background:var(--bg2);color:var(--text2);border:1px solid var(--border);}
+.pl{display:flex;flex-direction:column;gap:20px;}
+.pc{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;display:grid;grid-template-columns:220px 1fr;transition:border-color 0.2s;}
+.pc:hover{border-color:var(--accent2);}
+.pleft{background:var(--bg3);border-right:1px solid var(--border);padding:22px 20px;display:flex;flex-direction:column;gap:14px;}
+.pnum{font-size:11px;color:var(--text3);letter-spacing:1px;}
+.pcat{display:inline-block;font-size:10px;padding:3px 10px;border-radius:4px;background:var(--al);color:var(--accent);border:1px solid var(--border);text-transform:uppercase;letter-spacing:0.8px;}
+.pchart{background:var(--al);border-radius:10px;height:90px;display:flex;align-items:flex-end;justify-content:center;padding:10px 12px;gap:5px;overflow:hidden;}
+.bar{border-radius:3px 3px 0 0;background:var(--accent2);flex-shrink:0;}
+.tlbl{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+.trow{display:flex;flex-wrap:wrap;gap:8px;}
+.ti{display:flex;flex-direction:column;align-items:center;gap:3px;}
+.tico{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);overflow:hidden;}
+.tnm{font-size:9px;color:var(--text3);text-align:center;max-width:36px;line-height:1.2;}
+.pright{padding:24px 28px;display:flex;flex-direction:column;gap:10px;}
+.ptitle{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--text);line-height:1.2;}
+.pctx{font-size:11.5px;color:var(--text3);}
+.pdesc{font-size:13px;color:var(--text2);line-height:1.75;flex:1;}
+.pres{display:flex;align-items:flex-start;gap:10px;background:var(--al);border-radius:8px;padding:10px 14px;}
+.reslbl{font-size:10px;font-weight:500;color:var(--accent);text-transform:uppercase;letter-spacing:0.8px;white-space:nowrap;margin-top:1px;}
+.resval{font-size:12.5px;color:var(--text2);}
+.plink{font-size:12px;color:var(--accent);text-decoration:none;display:flex;align-items:center;gap:8px;margin-top:4px;}
+.plinkd{width:22px;height:22px;border-radius:50%;background:var(--al);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--accent);}
+.crow{display:flex;align-items:baseline;justify-content:space-between;padding:18px 0;border-bottom:1px solid var(--border);}
+.crow:first-child{border-top:1px solid var(--border);}
+.cleft{display:flex;align-items:baseline;gap:16px;}
+.cn{font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--text3);min-width:26px;}
+.cname{font-size:14.5px;font-weight:500;color:var(--text);}
+.ciss{font-size:12px;color:var(--text3);margin-left:8px;}
+.cyr{font-size:12px;color:var(--text3);}
+#contact .pi{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.coh{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:500;color:var(--text);line-height:1.05;margin-bottom:14px;}
+.cosub{font-size:14px;color:var(--text2);line-height:1.75;margin-bottom:32px;}
+.coit{display:flex;flex-direction:column;gap:12px;}
+.coi{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--text);padding:14px 16px;border-radius:10px;border:1px solid var(--border);background:var(--card);transition:border-color 0.2s,background 0.2s;}
+.coi:hover{border-color:var(--accent2);background:var(--al);}
+.coico{width:36px;height:36px;border-radius:8px;background:var(--al);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.coico svg{width:16px;height:16px;stroke:var(--accent);fill:none;stroke-width:2;}
+.colbl{font-size:11px;color:var(--text3);margin-bottom:1px;}
+.coval{font-size:13px;font-weight:500;color:var(--text);}
+.cf{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:14px;}
+.cfh{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--text);margin-bottom:2px;}
+.cfs{font-size:12px;color:var(--text3);margin-bottom:6px;}
+.fg{display:flex;flex-direction:column;gap:5px;}
+.flb{font-size:10.5px;color:var(--text3);text-transform:uppercase;letter-spacing:0.8px;}
+.fin{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--text);outline:none;transition:border-color 0.2s;}
+.fin:focus{border-color:var(--accent2);}
+textarea.fin{height:96px;resize:none;}
+.fbtn{background:var(--accent);color:#fff;border:none;border-radius:8px;padding:12px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;margin-top:4px;}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:22px 48px;display:flex;justify-content:space-between;align-items:center;}
+.fn{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--text2);}
+.fnote{font-size:12px;color:var(--text3);}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <div class="nav-logo" onclick="sp('home')">Akshay U. Veettil</div>
+  <div class="nav-links">
+    <a onclick="sp('home')" data-p="home" class="active">Home</a>
+    <a onclick="sp('about')" data-p="about">About</a>
+    <a onclick="sp('experience')" data-p="experience">Experience</a>
+    <a onclick="sp('skills')" data-p="skills">Skills</a>
+    <a onclick="sp('projects')" data-p="projects">Projects</a>
+    <a onclick="sp('certificates')" data-p="certificates">Certificates</a>
+    <a onclick="sp('contact')" data-p="contact">Contact</a>
+  </div>
+  <a class="nav-cv" href="#">Download CV</a>
+</nav>
+
+<!-- HOME -->
+<div id="home" class="page active">
+  <div class="pi">
+    <div>
+      <div class="h-ey">Demand Analyst &middot; Data Science &middot; AI</div>
+      <div class="h-name">Akshay<br>Unikkandan<br>Veettil</div>
+      <div class="aw"><div class="ab"></div><div class="at" id="anim-t">AI-Enabled Demand Planner</div></div>
+      <div class="h-bio">Turning operational and customer data into commercial decisions &mdash; from demand models and KPI frameworks to process improvement across B2B FMCG and SaaS.</div>
+      <div class="hbtns">
+        <button class="bp" onclick="sp('projects')">View my work</button>
+        <button class="bs" onclick="sp('contact')">Get in touch</button>
+      </div>
+      <div class="hst">
+        <div><div class="sn">2+</div><div class="sl">Years in analytics</div></div>
+        <div><div class="sn">7</div><div class="sl">Projects</div></div>
+        <div><div class="sn">87%</div><div class="sl">Forecast accuracy</div></div>
+        <div><div class="sn">9</div><div class="sl">Certifications</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="hph" id="hero-photo">
+        <div class="phi">AV</div>
+        <div class="phn">Add your photo</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="page">
+  <div class="pi">
+    <div class="ey">About me</div>
+    <div class="st">Demand analyst with a data science edge</div>
+    <div class="dv"></div>
+    <div class="aq fi">&ldquo;I build the models and frameworks that turn raw operational data into decisions that actually get made.&rdquo;</div>
+    <div class="ab2 fi">I am a demand analyst with an MSc in Data Science and AI from Bournemouth University and a KPMG-certified Lean Six Sigma Green Belt. My work sits at the intersection of demand forecasting, customer analytics, and process improvement &mdash; translating complex data into clear commercial signals for senior stakeholders.<br><br>I have hands-on experience building Power BI KPI frameworks, Python-based demand models, and DMAIC-driven process reviews in B2B FMCG supply chains and SaaS environments. I approach every problem with both the rigour of data science and the pragmatism of operations &mdash; asking not just what the data shows, but what it means and what to do next.<br><br>Based in Halle, Germany. Open to remote, hybrid, and relocation opportunities across Europe.</div>
+    <div class="atags fi">
+      <span class="atag">MSc Data Science &amp; AI</span>
+      <span class="atag">KPMG Lean Six Sigma Green Belt</span>
+      <span class="atag">Bournemouth University</span>
+      <span class="atag">Halle, Germany</span>
+      <span class="atag">Open to relocation</span>
+    </div>
+    <div class="afc fi">
+      <div class="fb"><div class="fl">Current role</div><div class="fv">Demand Analyst, Scholarco Academy</div></div>
+      <div class="fb"><div class="fl">Education</div><div class="fv">MSc Data Science &amp; AI &mdash; Merit</div></div>
+      <div class="fb"><div class="fl">Specialisation</div><div class="fv">Forecasting &middot; BI &middot; DMAIC</div></div>
+      <div class="fb"><div class="fl">Location</div><div class="fv">Halle, Germany</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<div id="experience" class="page">
+  <div class="pi">
+    <div class="ey">Work history</div>
+    <div class="st">Experience</div>
+    <div class="dv"></div>
+    <div class="ei fi">
+      <div class="el"><div class="ed">09/2025 &mdash; Present</div><div class="eloc">Remote</div><span class="eb">Full-time</span></div>
+      <div class="er"><div class="edot"></div><div class="ec">Scholarco Academy</div><div class="ero">Demand Analyst &mdash; Customer Insights &amp; Performance</div><div class="edesc">Responsible for building and owning the organisation's analytical infrastructure from scratch. Designed a 25-metric KPI governance framework that became the single source of truth for senior leadership decision-making. Developed demand forecasting models using historical behavioural data achieving 87% accuracy, significantly reducing ad-hoc reporting. Led a DMAIC-driven review of customer support escalation workflows identifying and resolving three systemic bottlenecks. Delivered weekly insight narratives through Power BI dashboards tracking 10,000+ customer journey records.</div></div>
+    </div>
+    <div class="ei fi">
+      <div class="el"><div class="ed">07/2023 &mdash; 09/2025</div><div class="eloc">Nottingham, UK</div><span class="eb">Full-time</span></div>
+      <div class="er"><div class="edot"></div><div class="ec">Staffline Group</div><div class="ero">Supply &amp; Fulfillment Analyst (Embedded) &middot; Compleat Food Group</div><div class="edesc">Embedded analyst at Compleat Food Group, a B2B FMCG client with 300+ workers. Designed a supply-versus-demand KPI monitoring system surfacing a recurring 5% understaffing gap escalated to client leadership. Ran a full DMAIC improvement cycle on daily reporting workflows reducing manual preparation from 2 hours to 15 minutes. Coordinated weekly operational reviews translating workforce data into commercial insight for client Finance and Group SLT. Managed attendance tracking using UKG Kronos and executed minimum wage scenario analysis identifying compliance shortfalls before audit.</div></div>
+    </div>
+    <div class="ei fi">
+      <div class="el"><div class="ed">04/2022 &mdash; 03/2023</div><div class="eloc">Remote</div><span class="eb">Internship</span></div>
+      <div class="er"><div class="edot"></div><div class="ec">Souhrudha Finance</div><div class="ero">Business Analytics Intern</div><div class="edesc">Supported development of business analysis models and contributed to strategic initiatives aimed at brand growth and customer engagement. Gained foundational experience translating financial and customer data into actionable insight, working with senior analysts on reporting and performance tracking.</div></div>
+    </div>
+    <div class="ei fi">
+      <div class="el"><div class="ed">09/2020 &mdash; 06/2021</div><div class="eloc">India</div><span class="eb">Full-time</span></div>
+      <div class="er"><div class="edot"></div><div class="ec">Mayant Solutions</div><div class="ero">Junior Python Programmer</div><div class="edesc">Developed and maintained Python-based scripts and automation tools supporting internal data processing and operational workflows. Collaborated within a small technical team building data pipelines, establishing the programming foundations that underpinned later data science work.</div></div>
+    </div>
+    <div class="ei fi">
+      <div class="el"><div class="ed">11/2019 &mdash; 05/2020</div><div class="eloc">India</div><span class="eb">Trainee</span></div>
+      <div class="er"><div class="edot"></div><div class="ec">Cognizant Technology Solutions</div><div class="ero">Programmer Trainee</div><div class="edesc">Completed an intensive technical training programme covering software development principles, programming fundamentals, and enterprise technology practices. Developed structured problem-solving skills that formed the technical foundation of subsequent analytical roles.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div id="skills" class="page">
+  <div class="pi">
+    <div class="ey">Technical expertise</div>
+    <div class="st">Skills</div>
+    <div class="dv"></div>
+    <div class="sg">
+      <div class="skc fi"><div class="ski"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 16l4-4 4 4 4-8"/></svg></div><div class="skcat">Demand &amp; Forecasting</div><div class="skps"><span class="skp">Demand Forecasting</span><span class="skp">Capacity Planning</span><span class="skp">Scenario Modelling</span><span class="skp">Cohort Analysis</span><span class="skp">Segmentation Analysis</span><span class="skp">Labour Budget Analysis</span></div></div>
+      <div class="skc fi"><div class="ski"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div class="skcat">BI &amp; Visualisation</div><div class="skps"><span class="skp">Power BI</span><span class="skp">Advanced DAX</span><span class="skp">Power Query M</span><span class="skp">Star Schema</span><span class="skp">RLS</span><span class="skp">Tableau</span></div></div>
+      <div class="skc fi"><div class="ski"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M9 9l6 6M15 9l-6 6"/></svg></div><div class="skcat">Data Science &amp; AI</div><div class="skps"><span class="skp">Python</span><span class="skp">Pandas</span><span class="skp">NumPy</span><span class="skp">Scikit-learn</span><span class="skp">A/B Testing</span><span class="skp">Churn Modelling</span></div></div>
+      <div class="skc fi"><div class="ski"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="skcat">Process Improvement</div><div class="skps"><span class="skp">DMAIC</span><span class="skp">Lean Methodology</span><span class="skp">Six Sigma</span><span class="skp">Root Cause Analysis</span><span class="skp">SIPOC</span><span class="skp">Process Mapping</span></div></div>
+      <div class="skc fi"><div class="ski"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg></div><div class="skcat">Databases &amp; Languages</div><div class="skps"><span class="skp">SQL</span><span class="skp">PostgreSQL</span><span class="skp">MySQL</span><span class="skp">CTEs</span><span class="skp">Window Functions</span></div></div>
+      <div class="skc fi"><div class="ski"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M9 12h6M12 9v6"/></svg></div><div class="skcat">Platforms &amp; Tools</div><div class="skps"><span class="skp">MS Dynamics 365</span><span class="skp">Celonis</span><span class="skp">UKG Kronos</span><span class="skp">SAP SuccessFactors</span><span class="skp">Google Analytics</span><span class="skp">GitHub</span><span class="skp">Jupyter</span><span class="skp">MS Excel (Advanced)</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div id="projects" class="page">
+  <div class="pi">
+    <div class="ey">Selected work</div>
+    <div class="st">Projects</div>
+    <div class="dv"></div>
+    <svg style="display:none"><symbol id="ico-py" viewBox="0 0 32 32"><path d="M15.885 2C8.27 2 8.75 5.307 8.75 5.307L8.76 8.73h7.26v1H5.73S1 9.16 1 16.843c0 7.682 4.24 7.41 4.24 7.41h2.532v-3.565s-.136-4.24 4.17-4.24h7.193s4.032.065 4.032-3.9V6.246S23.703 2 15.885 2zm-4.01 2.31a1.3 1.3 0 110 2.6 1.3 1.3 0 010-2.6z" fill="#fff"/><path d="M16.115 30c7.616 0 7.136-3.307 7.136-3.307l-.01-3.423h-7.26v-1h10.29S30 22.84 30 15.157c0-7.683-4.24-7.41-4.24-7.41h-2.532v3.564s.136 4.24-4.17 4.24H11.86s-4.032-.065-4.032 3.9v6.302S7.297 30 15.115 30h1zm4.01-2.31a1.3 1.3 0 110-2.6 1.3 1.3 0 010 2.6z" fill="#FFD845"/></symbol></svg>
+    <div class="pl">
+
+      <div class="pc fi">
+        <div class="pleft">
+          <div><div class="pnum">01 / 07</div><div style="margin-top:6px"><span class="pcat">Demand Forecasting</span></div></div>
+          <div class="pchart"><div class="bar" style="height:38%;width:13px;opacity:.4"></div><div class="bar" style="height:54%;width:13px;opacity:.5"></div><div class="bar" style="height:68%;width:13px;opacity:.62"></div><div class="bar" style="height:50%;width:13px;opacity:.48"></div><div class="bar" style="height:86%;width:13px;opacity:.75"></div><div class="bar" style="height:66%;width:13px;opacity:.6"></div><div class="bar" style="height:95%;width:13px;opacity:.85"></div><div class="bar" style="height:78%;width:13px;opacity:.7"></div></div>
+          <div><div class="tlbl">Tools used</div><div class="trow">
+            <div class="ti"><div class="tico" style="background:#3572A5"><svg width="20" height="20" viewBox="0 0 32 32"><use href="#ico-py"/></svg></div><div class="tnm">Python</div></div>
+            <div class="ti"><div class="tico" style="background:#F7931E"><svg width="20" height="20" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="#F7931E"/><text x="5" y="22" font-size="13" font-weight="800" fill="#fff" font-family="Arial">SK</text></svg></div><div class="tnm">Scikit</div></div>
+            <div class="ti"><div class="tico" style="background:#013243"><svg width="20" height="20" viewBox="0 0 32 32"><rect width="32" height="32" fill="#013243"/><text x="4" y="22" font-size="12" font-weight="700" fill="#4DABCF" font-family="Arial">PD</text></svg></div><div class="tnm">Pandas</div></div>
+            <div class="ti"><div class="tico" style="background:#e38c00"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="7" rx="7" ry="2.5" fill="#fff" opacity=".9"/><path d="M5 7v4.5c0 1.38 3.13 2.5 7 2.5s7-1.12 7-2.5V7" stroke="#fff" stroke-width="1.5" fill="none" opacity=".9"/><path d="M5 11.5v4.5c0 1.38 3.13 2.5 7 2.5s7-1.12 7-2.5v-4.5" stroke="#fff" stroke-width="1.5" fill="none" opacity=".9"/></svg></div><div class="tnm">SQL</div></div>
+          </div></div>
+        </div>
+        <div class="pright">
+          <div class="ptitle">FMCG Demand Forecasting</div><div class="pctx">B2B Supply Chain &middot; Staffline / Compleat Food Group</div>
+          <div class="pdesc">A B2B FMCG supply chain was experiencing recurring 5% understaffing gaps with no predictive signal. Built an end-to-end demand forecasting model on historical shift and order data enabling proactive capacity planning and reducing last-minute coverage failures escalated to client leadership.</div>
+          <div class="pres"><span class="reslbl">Result</span><span class="resval">87% forecast accuracy &middot; Ad-hoc reporting reduced by 35%</span></div>
+          <a href="https://github.com/Akshay-Unikkandan-Veettil/FMCG-Forecasting" target="_blank" class="plink"><div class="plinkd">&#8599;</div>View on GitHub</a>
+        </div>
+      </div>
+
+      <div class="pc fi">
+        <div class="pleft">
+          <div><div class="pnum">02 / 07</div><div style="margin-top:6px"><span class="pcat">Predictive Modelling</span></div></div>
+          <div class="pchart" style="align-items:center;padding:8px 10px">
+            <div style="display:flex;flex-direction:column;gap:4px;width:100%">
+              <div style="display:flex;align-items:center;gap:4px"><div style="font-size:8px;color:var(--accent);width:28px">XGB</div><div style="flex:1;height:10px;background:var(--accent2);border-radius:2px;opacity:.85"></div></div>
+              <div style="display:flex;align-items:center;gap:4px"><div style="font-size:8px;color:var(--accent);width:28px">RF</div><div style="flex:.82;height:10px;background:var(--accent2);border-radius:2px;opacity:.7"></div></div>
+              <div style="display:flex;align-items:center;gap:4px"><div style="font-size:8px;color:var(--accent);width:28px">GBM</div><div style="flex:.72;height:10px;background:var(--accent2);border-radius:2px;opacity:.6"></div></div>
+              <div style="display:flex;align-items:center;gap:4px"><div style="font-size:8px;color:var(--accent);width:28px">MLP</div><div style="flex:.6;height:10px;background:var(--accent2);border-radius:2px;opacity:.5"></div></div>
+              <div style="display:flex;align-items:center;gap:4px"><div style="font-size:8px;color:var(--accent);width:28px">KNN</div><div style="flex:.48;height:10px;background:var(--accent2);border-radius:2px;opacity:.4"></div></div>
+            </div>
+          </div>
+          <div><div class="tlbl">Tools used</div><div class="trow">
+            <div class="ti"><div class="tico" style="background:#3572A5"><svg width="20" height="20" viewBox="0 0 32 32"><use href="#ico-py"/></svg></div><div class="tnm">Python</div></div>
+            <div class="ti"><div class="tico" style="background:#F7931E"><svg width="20" height="20" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="#F7931E"/><text x="5" y="22" font-size="13" font-weight="800" fill="#fff" font-family="Arial">SK</text></svg></div><div class="tnm">Scikit</div></div>
+            <div class="ti"><div class="tico" style="background:#013243"><svg width="20" height="20" viewBox="0 0 32 32"><rect width="32" height="32" fill="#013243"/><text x="4" y="22" font-size="12" font-weight="700" fill="#4DABCF" font-family="Arial">PD</text></svg></div><div class="tnm">Pandas</div></div>
+            <div class="ti"><div class="tico" style="background:#4C77B5"><svg width="20" height="20" viewBox="0 0 32 32"><rect width="32" height="32" fill="#4C77B5"/><text x="4" y="22" font-size="11" font-weight="700" fill="#fff" font-family="Arial">NP</text></svg></div><div class="tnm">NumPy</div></div>
+          </div></div>
+        </div>
+        <div class="pright">
+          <div class="ptitle">Ensemble ML for Demand &amp; Value Forecasting</div><div class="pctx">MSc Dissertation &middot; Bournemouth University &middot; 2023</div>
+          <div class="pdesc">Comparative study evaluating XGBoost, Random Forest, Gradient Boosting, MLP, and KNN for predicting entity value from complex attribute sets. XGBoost led performance, demonstrating strong capability for non-linear relationship capture. Explored hybrid ensemble models (XGB+MLP, LR+RF). Findings directly transferable to demand-driven valuation, pricing, and resource planning contexts.</div>
+          <div class="pres"><span class="reslbl">Result</span><span class="resval">XGBoost top performer &middot; Hybrid ensemble approach validated</span></div>
+          <a href="https://github.com/Akshay-Unikkandan-Veettil/Data-Analytics-Machine-learning/blob/main/Football%20Player%20Transfer%20Value%20Prediction.ipynb" target="_blank" class="plink"><div class="plinkd">&#8599;</div>View on GitHub</a>
+        </div>
+      </div>
+
+      <div class="pc fi">
+        <div class="pleft">
+          <div><div class="pnum">03 / 07</div><div style="margin-top:6px"><span class="pcat">Route Optimisation</span></div></div>
+          <div class="pchart" style="align-items:center;justify-content:center">
+            <svg width="140" height="70" viewBox="0 0 140 70"><circle cx="20" cy="55" r="5" fill="#8c6e56" opacity=".7"/><circle cx="55" cy="20" r="5" fill="#8c6e56" opacity=".7"/><circle cx="90" cy="45" r="5" fill="#8c6e56" opacity=".7"/><circle cx="125" cy="15" r="5" fill="#8c6e56" opacity=".85"/><line x1="20" y1="55" x2="55" y2="20" stroke="#8c6e56" stroke-width="1.5" opacity=".5"/><line x1="55" y1="20" x2="90" y2="45" stroke="#8c6e56" stroke-width="1.5" opacity=".5"/><line x1="90" y1="45" x2="125" y2="15" stroke="#8c6e56" stroke-width="2" opacity=".8"/><line x1="20" y1="55" x2="90" y2="45" stroke="#8c6e56" stroke-width=".8" stroke-dasharray="3,3" opacity=".3"/></svg>
+          </div>
+          <div><div class="tlbl">Tools used</div><div class="trow">
+            <div class="ti"><div class="tico" style="background:#3572A5"><svg width="20" height="20" viewBox="0 0 32 32"><use href="#ico-py"/></svg></div><div class="tnm">Python</div></div>
+            <div class="ti"><div class="tico" style="background:#013243"><svg width="20" height="20" viewBox="0 0 32 32"><rect width="32" height="32" fill="#013243"/><text x="4" y="22" font-size="12" font-weight="700" fill="#4DABCF" font-family="Arial">PD</text></svg></div><div class="tnm">Pandas</div></div>
+          </div></div>
+        </div>
+        <div class="pright">
+          <div class="ptitle">Operational Route Optimisation Model</div><div class="pctx">Path optimisation &middot; Transferable to logistics &amp; supply chain</div>
+          <div class="pdesc">Developed a computational path optimisation model using graph-based techniques applicable to real-world logistics routing. The model identifies optimal traversal paths under defined constraints, directly transferable to last-mile delivery routing, warehouse pick-path optimisation, and supply chain network efficiency analysis.</div>
+          <div class="pres"><span class="reslbl">Application</span><span class="resval">Last-mile delivery &middot; Warehouse routing &middot; Network efficiency</span></div>
+          <a href="https://github.com/Akshay-Unikkandan-Veettil/Data-Analytics-Machine-learning/blob/main/SEO.ipynb" target="_blank" class="plink"><div class="plinkd">&#8599;</div>View on GitHub</a>
+        </div>
+      </div>
+
+      <div class="pc fi">
+        <div class="pleft">
+          <div><div class="pnum">04 / 07</div><div style="margin-top:6px"><span class="pcat">Capacity Planning</span></div></div>
+          <div class="pchart" style="align-items:center;justify-content:center">
+            <svg width="140" height="70" viewBox="0 0 140 70"><polyline points="10,60 30,50 50,55 70,30 90,20 110,35 130,15" fill="none" stroke="#8c6e56" stroke-width="2" opacity=".7"/><circle cx="70" cy="30" r="4" fill="#c0392b" opacity=".7"/><circle cx="90" cy="20" r="4" fill="#c0392b" opacity=".7"/><line x1="65" y1="5" x2="65" y2="65" stroke="#c0392b" stroke-width="1" stroke-dasharray="3,3" opacity=".4"/><text x="68" y="12" font-size="8" fill="#8c6e56" opacity=".8" font-family="Arial">risk zone</text></svg>
+          </div>
+          <div><div class="tlbl">Tools used</div><div class="trow">
+            <div class="ti"><div class="tico" style="background:#3572A5"><svg width="20" height="20" viewBox="0 0 32 32"><use href="#ico-py"/></svg></div><div class="tnm">Python</div></div>
+            <div class="ti"><div class="tico" style="background:#F7931E"><svg width="20" height="20" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="#F7931E"/><text x="5" y="22" font-size="13" font-weight="800" fill="#fff" font-family="Arial">SK</text></svg></div><div class="tnm">Scikit</div></div>
+            <div class="ti"><div class="tico" style="background:#013243"><svg width="20" height="20" viewBox="0 0 32 32"><rect width="32" height="32" fill="#013243"/><text x="4" y="22" font-size="12" font-weight="700" fill="#4DABCF" font-family="Arial">PD</text></svg></div><div class="tnm">Pandas</div></div>
+          </div></div>
+        </div>
+        <div class="pright">
+          <div class="ptitle">Capacity Loss Prediction Model</div><div class="pctx">Workforce &amp; supply chain capacity management</div>
+          <div class="pdesc">Predictive model identifying capacity shortfall risk before it materialises. Built on operational data to classify and flag conditions likely to result in capacity loss, enabling proactive intervention. Directly applicable to workforce planning, production scheduling, and supply chain buffer management where demand-supply imbalances carry commercial cost.</div>
+          <div class="pres"><span class="reslbl">Application</span><span class="resval">Proactive capacity flagging &middot; Workforce &amp; production planning</span></div>
+          <a href="https://github.com/Akshay-Unikkandan-Veettil/Capacity-Loss-Prediction" target="_blank" class="plink"><div class="plinkd">&#8599;</div>View on GitHub</a>
+        </div>
+      </div>
+
+      <div class="pc fi">
+        <div class="pleft">
+          <div><div class="pnum">05 / 07</div><div style="margin-top:6px"><span class="pcat">Academic Project</span></div></div>
+          <div class="pchart" style="align-items:center;justify-content:center">
+            <svg width="100" height="80" viewBox="0 0 100 80"><rect x="5" y="5" width="40" height="35" rx="4" fill="#8c6e56" opacity=".15" stroke="#8c6e56" stroke-width="1"/><rect x="55" y="5" width="40" height="35" rx="4" fill="#8c6e56" opacity=".55" stroke="#8c6e56" stroke-width="1"/><rect x="5" y="46" width="40" height="28" rx="4" fill="#8c6e56" opacity=".4" stroke="#8c6e56" stroke-width="1"/><rect x="55" y="46" width="40" height="28" rx="4" fill="#8c6e56" opacity=".1" stroke="#8c6e56" stroke-width="1"/><text x="15" y="26" font-size="9" fill="#5c4a38" font-family="Arial">TN</text><text x="65" y="26" font-size="9" fill="#5c4a38" font-family="Arial">TP</text><text x="15" y="64" font-size="9" fill="#5c4a38" font-family="Arial">FN</text><text x="65" y="64" font-size="9" fill="#5c4a38" font-family="Arial">FP</text></svg>
+          </div>
+          <div><div class="tlbl">Tools used</div><div class="trow">
+            <div class="ti"><div class="tico" style="background:#3572A5"><svg width="20" height="20" viewBox="0 0 32 32"><use href="#ico-py"/></svg></div><div class="tnm">Python</div></div>
+            <div class="ti"><div class="tico" style="background:#F7931E"><svg width="20" height="20" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="#F7931E"/><text x="5" y="22" font-size="13" font-weight="800" fill="#fff" font-family="Arial">SK</text></svg></div><div class="tnm">Scikit</div></div>
+            <div class="ti"><div class="tico" style="background:#4C77B5"><svg width="20" height="20" viewBox="0 0 32 32"><rect width="32" height="32" fill="#4C77B5"/><text x="4" y="22" font-size="11" font-weight="700" fill="#fff" font-family="Arial">NP</text></svg></div><div class="tnm">NumPy</div></div>
+          </div></div>
+        </div>
+        <div class="pright">
+          <div class="ptitle">Binary Classification Model for Medical Risk Prediction</div><div class="pctx">AI &amp; Machine Learning &middot; Academic</div>
+          <div class="pdesc">Applied binary classification techniques to predict medical risk outcomes from patient attribute data. Implemented and compared multiple classification models evaluating precision, recall, and F1 performance. Demonstrates core ML workflow competency applicable to any domain requiring risk classification and early-warning prediction.</div>
+          <div class="pres"><span class="reslbl">Skills shown</span><span class="resval">Classification &middot; Feature engineering &middot; Model evaluation &middot; Risk prediction</span></div>
+          <a href="https://github.com/Akshay-Unikkandan-Veettil/AI-Projects" target="_blank" class="plink"><div class="plinkd">&#8599;</div>View on GitHub</a>
+        </div>
+      </div>
+
+      <div class="pc fi">
+        <div class="pleft">
+          <div><div class="pnum">06 / 07</div><div style="margin-top:6px"><span class="pcat">BI Dashboard</span></div></div>
+          <div class="pchart" style="gap:4px;padding:10px 12px"><div class="bar" style="height:55%;width:13px;opacity:.5"></div><div class="bar" style="height:75%;width:13px;opacity:.65"></div><div class="bar" style="height:45%;width:13px;opacity:.42"></div><div class="bar" style="height:90%;width:13px;opacity:.8"></div><div class="bar" style="height:62%;width:13px;opacity:.56"></div><div class="bar" style="height:80%;width:13px;opacity:.7"></div></div>
+          <div><div class="tlbl">Tools used</div><div class="trow">
+            <div class="ti"><div class="tico" style="background:#F2C811"><svg width="20" height="20" viewBox="0 0 32 32"><rect width="32" height="32" fill="#F2C811"/><text x="3" y="22" font-size="10" font-weight="800" fill="#333" font-family="Arial">PBI</text></svg></div><div class="tnm">Power BI</div></div>
+            <div class="ti"><div class="tico" style="background:#e38c00"><svg width="20" height="20" viewBox="0 0 32 32"><rect width="32" height="32" fill="#e38c00"/><text x="4" y="22" font-size="10" font-weight="700" fill="#fff" font-family="Arial">DAX</text></svg></div><div class="tnm">DAX</div></div>
+          </div></div>
+        </div>
+        <div class="pright">
+          <div class="ptitle">HR Analytics Power BI Dashboard</div><div class="pctx">Workforce analytics &middot; Power BI</div>
+          <div class="pdesc">Operational dashboard built in Power BI for HR analytics, covering workforce composition, attendance patterns, and headcount metrics. Demonstrates advanced DAX measures, dynamic filtering via slicers, and star schema data modelling for clean, scalable reporting across senior stakeholders.</div>
+          <div class="pres"><span class="reslbl">Skills shown</span><span class="resval">Advanced DAX &middot; Star schema &middot; Executive reporting design</span></div>
+          <a href="https://github.com/Akshay-Unikkandan-Veettil/Power-BI" target="_blank" class="plink"><div class="plinkd">&#8599;</div>View on GitHub</a>
+        </div>
+      </div>
+
+      <div class="pc fi">
+        <div class="pleft">
+          <div><div class="pnum">07 / 07</div><div style="margin-top:6px"><span class="pcat">Data Visualisation</span></div></div>
+          <div class="pchart" style="align-items:center;justify-content:center">
+            <svg width="90" height="80" viewBox="0 0 90 80"><circle cx="45" cy="40" r="32" fill="none" stroke="#8c6e56" stroke-width="1" opacity=".3"/><path d="M45 40 L45 8 A32 32 0 0 1 72 56 Z" fill="#8c6e56" opacity=".6"/><path d="M45 40 L72 56 A32 32 0 0 1 18 56 Z" fill="#8c6e56" opacity=".4"/><path d="M45 40 L18 56 A32 32 0 0 1 45 8 Z" fill="#8c6e56" opacity=".22"/></svg>
+          </div>
+          <div><div class="tlbl">Tools used</div><div class="trow">
+            <div class="ti"><div class="tico" style="background:#F2C811"><svg width="20" height="20" viewBox="0 0 32 32"><rect width="32" height="32" fill="#F2C811"/><text x="3" y="22" font-size="10" font-weight="800" fill="#333" font-family="Arial">PBI</text></svg></div><div class="tnm">Power BI</div></div>
+            <div class="ti"><div class="tico" style="background:#e38c00"><svg width="20" height="20" viewBox="0 0 32 32"><rect width="32" height="32" fill="#e38c00"/><text x="2" y="21" font-size="9" font-weight="700" fill="#fff" font-family="Arial">PQM</text></svg></div><div class="tnm">PQ M</div></div>
+          </div></div>
+        </div>
+        <div class="pright">
+          <div class="ptitle">Netflix Content Dashboard</div><div class="pctx">Content analytics &middot; Data visualisation &middot; Power BI</div>
+          <div class="pdesc">Interactive Power BI dashboard visualising Netflix content library data across genre, country, release year, and content type. Built to demonstrate data storytelling and visual design principles using Power BI advanced chart types and Power Query for data transformation and cleaning.</div>
+          <div class="pres"><span class="reslbl">Skills shown</span><span class="resval">Data storytelling &middot; Visual design &middot; Power Query transformation</span></div>
+          <a href="https://github.com/Akshay-Unikkandan-Veettil/Power-BI" target="_blank" class="plink"><div class="plinkd">&#8599;</div>View on GitHub</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- CERTIFICATES -->
+<div id="certificates" class="page">
+  <div class="pi">
+    <div class="ey">Credentials</div>
+    <div class="st">Certificates</div>
+    <div class="dv"></div>
+    <div>
+      <div class="crow fi"><div class="cleft"><span class="cn">01</span><span class="cname">Lean Six Sigma Green Belt</span><span class="ciss">KPMG</span></div><span class="cyr">2023</span></div>
+      <div class="crow fi"><div class="cleft"><span class="cn">02</span><span class="cname">Google Project Management</span><span class="ciss">Google / Coursera</span></div><span class="cyr">2023</span></div>
+      <div class="crow fi"><div class="cleft"><span class="cn">03</span><span class="cname">Microsoft Power BI PL-300</span><span class="ciss">Microsoft / Coursera</span></div><span class="cyr">2023</span></div>
+      <div class="crow fi"><div class="cleft"><span class="cn">04</span><span class="cname">Certified Human Resource &amp; Talent Analytics Manager (CHRA)</span><span class="ciss">CIPC</span></div><span class="cyr">2023</span></div>
+      <div class="crow fi"><div class="cleft"><span class="cn">05</span><span class="cname">ADP Entry-Level Compensation and Benefits Analyst</span><span class="ciss">Coursera</span></div><span class="cyr">2023</span></div>
+      <div class="crow fi"><div class="cleft"><span class="cn">06</span><span class="cname">Workday Action Series</span><span class="ciss">Coursera</span></div><span class="cyr">2023</span></div>
+      <div class="crow fi"><div class="cleft"><span class="cn">07</span><span class="cname">SAP SuccessFactors Employee Central</span><span class="ciss">Udemy</span></div><span class="cyr">2023</span></div>
+      <div class="crow fi"><div class="cleft"><span class="cn">08</span><span class="cname">The Complete SQL Bootcamp</span><span class="ciss">Udemy</span></div><span class="cyr">2023</span></div>
+      <div class="crow fi"><div class="cleft"><span class="cn">09</span><span class="cname">Celonis Process Mining Foundation</span><span class="ciss">Celonis</span></div><span class="cyr">2023</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="page">
+  <div class="pi">
+    <div>
+      <div class="ey">Get in touch</div>
+      <div class="coh">Let's work<br>together</div>
+      <div class="dv"></div>
+      <div class="cosub">Open to Demand Analyst, Data Science, and Analytics roles across FMCG, SaaS, and B2B environments. Based in Halle, Germany &mdash; available for remote, hybrid, and relocation across Europe.</div>
+      <div class="coit">
+        <a href="mailto:akshayveettil@gmail.com" class="coi"><div class="coico"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="colbl">Email</div><div class="coval">akshayveettil@gmail.com</div></div></a>
+        <a href="https://linkedin.com/in/akshay-unikkandan-veettil" target="_blank" class="coi"><div class="coico"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div><div><div class="colbl">LinkedIn</div><div class="coval">linkedin.com/in/akshay-unikkandan-veettil</div></div></a>
+        <a href="https://github.com/Akshay-Unikkandan-Veettil" target="_blank" class="coi"><div class="coico"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></div><div><div class="colbl">GitHub</div><div class="coval">github.com/Akshay-Unikkandan-Veettil</div></div></a>
+      </div>
+    </div>
+    <div class="cf">
+      <div class="cfh">Send a message</div>
+      <div class="cfs">I'll get back to you within 24 hours.</div>
+      <div class="fg"><label class="flb">Name</label><input type="text" class="fin" placeholder="Your name"></div>
+      <div class="fg"><label class="flb">Email</label><input type="email" class="fin" placeholder="your@email.com"></div>
+      <div class="fg"><label class="flb">Message</label><textarea class="fin" placeholder="Tell me about the role or project..."></textarea></div>
+      <button class="fbtn">Send message</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="fn">Akshay U. Veettil</div>
+  <div class="fnote">Demand Analyst | Data Science &amp; AI &middot; Halle, Germany</div>
+</footer>
+
+<script>
+function sp(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const l=document.querySelector('[data-p="'+id+'"]');
+  if(l)l.classList.add('active');
+  window.scrollTo(0,0);
+  setTimeout(()=>{document.querySelectorAll('.page.active .fi').forEach((el,i)=>setTimeout(()=>el.classList.add('v'),i*70));},40);
+  return false;
+}
+const titles=['AI-Enabled Demand Planner','Lean Six Sigma Green Belt','MSc Data Science & AI'];
+let ti=0;
+const tel=document.getElementById('anim-t');
+setInterval(()=>{tel.style.opacity='0';setTimeout(()=>{ti=(ti+1)%titles.length;tel.textContent=titles[ti];tel.style.opacity='1';},350);},2800);
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>10));
+setTimeout(()=>document.querySelectorAll('.page.active .fi').forEach((el,i)=>setTimeout(()=>el.classList.add('v'),i*70)),100);
+</script>
+</body>
+</html>
